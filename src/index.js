@@ -12,16 +12,17 @@ class Pokedex {
         this.attackModal = document.getElementById('attackModal');
         this.btnUpdate = document.getElementById('btnUpdate');
 
-        // this.id = 0;
+        this.uid = 0;
         this.event();
-        this.getPokemon();
+        this.getPokemons();
     }
 
     event() {
         this.btnAdd.onclick = (event) => this.pokemonValidate(event);
+        this.btnUpdate.onclick = (event) => this.updatePokemon(this.uid);
     }
 
-    getPokemon() {
+    getPokemons() {
         axios.get(`http://localhost:3000/pokemon`)
             .then(response => {
                 this.recoveryPokemon(response.data.pokemon);
@@ -34,9 +35,61 @@ class Pokedex {
 
     recoveryPokemon(data) {
         for (pokemon of data) {
-            const html = this.layoutPokemon(pokemon.name, pokemon.type, pokemon.attack, pokemon.id)
+            const html = this.layoutPokemon(pokemon.name, pokemon.type, pokemon.attack, pokemon.uid)
             this.insertHtml(html);
         }
+
+        document.querySelectorAll('.delete-pokemon').forEach(button => {
+            button.onclick = event => this.deletePokemon(button.uid);
+        });
+
+        document.querySelectorAll('.get-pokemon').forEach(button => {
+            button.onclick = event => this.getPokemon(button.uid);
+        })
+    }
+
+    deletePokemon(uid) {
+        axios.delete(`http://localhost:3000/pokemon/${uid}`)
+            .then(response => {
+                console.log(response);
+                alert('Pokemon deleted!')
+                window.location.reload();
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
+    getPokemon(uid) {
+        axios.get(`http://localhost:3000/pokemon/${uid}`)
+            .then((response) => {
+                console.log(response.data);
+
+                // this.uid = uid;
+                // this.nameModal.value = response.data.pokemon[0].name;
+                // this.typeModal.value = response.data.pokemon[0].type;
+                // this.attackModal.value = response.data.pokemon[0].attack;
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    updatePokemon(uid) {
+        let pokemon = {
+            name: this.nameModal.value,
+            type: this.typeModal.value,
+            attack: this.attack.value
+        }
+
+        axios.put(`http://localhost:3000/pokemon/${uid}`, pokemon)
+            .then((response) => {
+                console.log(response);
+                window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
 
     pokemonValidate(event) {
@@ -58,13 +111,14 @@ class Pokedex {
             .then(response => {
                 const html = this.layoutPokemon(pokemon.name, pokemon.type, pokemon.attack);
                 this.insertHtml(html);
+                console.log(response);
             })
             .catch(err => {
                 console.log(err);
             })
     }
 
-    layoutPokemon(name, type, attack, id) {
+    layoutPokemon(name, type, attack, uid) {
         return `
         <div id="cardDinamic">
             <div class="body-card">
@@ -77,8 +131,8 @@ class Pokedex {
                                 <label>${type}</label><br>
                                 <label>${attack}</label>
                                 <br>
-                                <button type="button" class="btn btn-danger delete-item" id="${id}">Deletar</button>
-                                <button type="button" class="btn btn-warning get-item" id="${id}" data-toggle="modal" 
+                                <button type="button" class="btn btn-danger delete-pokemon" id="${uid}">Deletar</button>
+                                <button type="button" class="btn btn-warning get-pokemon" id="${uid}" data-toggle="modal" 
                                 data-target="#exampleModal" data-whatever="@mdo">Editar</button>
                             </div>
                         </div>
