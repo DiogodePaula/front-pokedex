@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+    <title>Pokedéx</title>
+</head>
+
+<body>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar nota</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-modal">
+                        <div class="form-group">
+                            <label class="col-form-label">Nome</label>
+                            <input type="text" class="form-control input-modal" id="nameModal">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Tipo</label>
+                            <input type="text" class="form-control input-modal" id="typeModal">
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Ataque</label>
+                            <input type="number" class="form-control input-modal" id="attackModal">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success" id="btnUpdate">Atualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <img src="./img/navbar.png" alt="">
+    </div>
+
+    <div class="body-card">
+        <div class="container">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/249.png">
+                    <div class="content">
+                        <h2>Lugia</h2>
+                        <p>As asas de Lugia têm um poder devastador,
+                            uma leve vibração de suas asas pode explodir
+                            casas comuns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/Moltres.png">
+                    <div class="content">
+                        <h2>Moltres</h2>
+                        <p>Um lendário pássaro Pokémon. Ao bater as asas
+                            flamejantes, até o céu noturno fica vermelho.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/mewtwo.png">
+                    <div class="content">
+                        <h2>Mewtwo</h2>
+                        <p>Seu DNA é quase o mesmo que o de Mew. No entanto,
+                            seu tamanho e disposição são muito diferentes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/144.png">
+                    <div class="content">
+                        <h2>Articuno</h2>
+                        <p>É um Pokémon com plumagem azul e asas
+                            que dizem ser feitas de gelo. Congela a água que está
+                            contida no ar e faz nevar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="./img/Zapdos.png">
+                    <div class="content">
+                        <h2>Zapdos</h2>
+                        <p>Diz-se que este Pokémon lendário pássaro aparece quando
+                            o céu fica escuro e os raios caem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container wall">
+        <form>
+            <div class="form-group">
+                <!-- <label class="col-form-label">Nome</label> -->
+                <input type="text" class="form-control" id="txtName" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <!-- <label class="col-form-label">Tipo</label> -->
+                <input type="text" class="form-control" id="txtType" placeholder="Tipo">
+            </div>
+            <div class="form-group">
+                <!-- <label class="col-form-label">Ataque</label> -->
+                <input type="number" class="form-control" id="txtAttack" placeholder="Ataque">
+            </div>
+            <div class="form-group row" id="btnAdicionar">
+                <div class="col-sm-10 btnAdicionar">
+                    <button type="submit" class="btn btn-danger" id="btnAdicionar">Adicionar a
+                        Pokedéx</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div id="grid-container">
+        <div class="row mt-5 mb-5 container-div" id="newPokemons"></div>
+    </div>
+    <br>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="./bundle.js"></script>
+</body>
+
+</html>

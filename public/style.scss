@@ -1,0 +1,121 @@
+$font-color: #FFFFFF;
+$background: rgb(243, 247, 19);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    text-align: center;
+    padding: 20px;
+}
+
+.body-card{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    background-color: #E3350D;
+    padding: 15px;
+    position: relative;
+    width: 80%;
+    left: 10% !important;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+
+
+.container .card{
+    position: relative;
+    max-width:300px;
+    height: 250px;
+    background-color: #ffffff;
+    margin:  30px;
+    padding: 0px 50px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover{
+    height: 420px;
+}
+
+.container .card .imgBx{
+    position: relative;
+    width:260px;
+    height: 260;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.container .card .imgBx img{
+    max-width: 100%;
+    border-radius:4px;
+}
+
+.container .card .content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -20px;
+    transition-delay: 0.3s;
+}
+
+.grid-container{
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+    justify-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, $background, $font-color, $font-color, $font-color, $font-color, $background);
+    position: relative;
+    width: 80%;
+    left: 10% !important;
+}
+
+#container-dynamic{
+    display: inline-block;
+    justify-content: center;
+    width: 80% !important;
+    left: 10% !important;
+}
+
+container-div{
+    margin-left: 100px !important;
+    width: 80% !important;
+    left: 10% !important;
+    justify-content: center;
+}
+
+.wall{
+    background-image: url(./img/wallpaper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px;
+}
