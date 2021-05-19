@@ -10821,34 +10821,32 @@ a.text-dark:hover, a.text-dark:focus {
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .header {
   text-align: center;
   padding: 20px;
+  background-color: red;
 }
 
-.body-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-self: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #E3350D;
-  padding: 15px;
-  position: relative;
-  width: 80%;
-  left: 10% !important;
+.form {
+  width: 30rem;
+  margin: auto;
 }
 
-.container {
-  position: relative;
+.background {
+  background-image: url(../assets/img/wallpaper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 200px;
+}
+
+.pokemonsLendarios {
+  background-color: #ffffff;
+}
+
+.pokemonsLendarios__card-body {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10864,102 +10862,50 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 30px;
 }
 
-.container .card {
-  position: relative;
-  max-width: 300px;
-  height: 250px;
-  background-color: #ffffff;
-  margin: 30px;
-  padding: 0px 50px 0px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.pokemonsLendarios__card {
+  max-width: 20rem;
+  height: 20rem;
+  border-radius: 1rem;
+  background-color: red;
+  padding-right: 2.7rem;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 
-.container .card:hover {
-  height: 420px;
+.pokemonsLendarios__card:hover {
+  height: 30rem;
 }
 
-.container .card .imgBx {
-  position: relative;
-  width: 260px;
-  height: 260;
-  top: -60px;
+.pokemonsLendarios__imagem {
+  width: 20rem;
+  height: 20rem;
   left: 20px;
   z-index: 1;
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.container .card .imgBx img {
-  max-width: 100%;
-  border-radius: 4px;
-}
-
-.container .card .content {
+.pokemonsLendarios__content {
   position: relative;
-  margin-top: -140px;
-  padding: 10px 15px;
+  margin-top: -15rem;
+  padding: 0 2rem;
   text-align: center;
-  color: #111;
-  visibility: hidden;
-  opacity: 0;
+  color: red;
+  opacity: 0.1;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+  height: 100%;
 }
 
-.container .card:hover .content {
+.pokemonsLendarios__content:hover {
   visibility: visible;
   opacity: 1;
-  margin-top: -20px;
+  margin-top: -3rem;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
-}
-
-.grid-container {
-  display: -ms-grid !important;
-  display: grid !important;
-  -ms-grid-columns: (1fr)[1] !important;
-      grid-template-columns: repeat(1, 1fr) !important;
-  justify-items: center;
-  padding: 20px;
-  background: -webkit-gradient(linear, left top, right top, from(#f3f713), color-stop(#FFFFFF), color-stop(#FFFFFF), color-stop(#FFFFFF), color-stop(#FFFFFF), to(#f3f713));
-  background: linear-gradient(to right, #f3f713, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #f3f713);
-  position: relative;
-  width: 80%;
-  left: 10% !important;
-}
-
-#container-dynamic {
-  display: inline-block;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 80% !important;
-  left: 10% !important;
-}
-
-container-div {
-  margin-left: 100px !important;
-  width: 80% !important;
-  left: 10% !important;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.wall {
-  background-image: url(./img/wallpaper.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 200px;
+  color: #f3f713;
+  z-index: 100;
 }
 /*# sourceMappingURL=style.css.map */
